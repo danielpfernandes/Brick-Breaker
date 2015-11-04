@@ -1,0 +1,57 @@
+Initialize engine version: 5.2.1f1 (44735ea161b3)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: Intel(R) HD Graphics 4600 (ID=0x416)
+    Vendor:   Intel
+    VRAM:     128 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Brick-Breaker\bin\brickBreaker_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\Brick-Breaker\bin\brickBreaker_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Brick-Breaker\bin\brickBreaker_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\Brick-Breaker\bin\brickBreaker_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Brick-Breaker\bin\brickBreaker_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\Brick-Breaker\bin\brickBreaker_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Brick-Breaker\bin\brickBreaker_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\Daniel\Documents\GitHub\Brick-Breaker\bin\brickBreaker_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Brick-Breaker\bin\brickBreaker_Data\Managed\System.Core.dll (this message is harmless)
+- Completed reload, in  0.039 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Brick-Breaker\bin\brickBreaker_Data\Managed\System.dll (this message is harmless)
+Setting up 2 worker threads for Enlighten.
+  Thread -> id: 43dc -> priority: 1 
+  Thread -> id: 4db8 -> priority: 1 
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.780584 ms
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 179.
+Total: 0.167771 ms (FindLiveObjects: 0.012632 ms CreateObjectMapping: 0.007895 ms MarkObjects: 0.137770 ms  DeleteObjects: 0.009079 ms)
+
+Platform assembly: C:\Users\Daniel\Documents\GitHub\Brick-Breaker\bin\brickBreaker_Data\Managed\Boo.Lang.dll (this message is harmless)
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.298830 ms
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 192.
+Total: 0.219089 ms (FindLiveObjects: 0.012237 ms CreateObjectMapping: 0.007500 ms MarkObjects: 0.190667 ms  DeleteObjects: 0.008289 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.337122 ms
+
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 192.
+Total: 0.204483 ms (FindLiveObjects: 0.013026 ms CreateObjectMapping: 0.007500 ms MarkObjects: 0.180403 ms  DeleteObjects: 0.002763 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.510815 ms
+
+Unloading 9 unused Assets to reduce memory usage. Loaded Objects now: 179.
+Total: 0.184746 ms (FindLiveObjects: 0.016579 ms CreateObjectMapping: 0.011053 ms MarkObjects: 0.147244 ms  DeleteObjects: 0.009474 ms)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.309094 ms
+
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 192.
+Total: 0.240406 ms (FindLiveObjects: 0.012237 ms CreateObjectMapping: 0.008684 ms MarkObjects: 0.210010 ms  DeleteObjects: 0.008684 ms)
+

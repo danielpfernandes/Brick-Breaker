@@ -1,21 +1,23 @@
 ﻿#pragma strict
 
-var maxHits : int;
-var timesHit : int;
-var brick1Sprite : Sprite;
+/*var brick1Sprite : Sprite;
 var brick2Sprite : Sprite;
 var brick3Sprite : Sprite;
-var brick4Sprite : Sprite;
+var brick4Sprite : Sprite;*/
+
+var maxHits : int;
+var timesHit : int;
+var hitSprites : Sprite[];
+static var brickCount : int;
 
 function Start () {
 	timesHit = 0;
+	brickCount++;
 	//brickSprite = 'brick_1';
 	//GetComponent(SpriteRenderer).sprite = 
-	this.gameObject.GetComponent.<SpriteRenderer>().sprite = brick1Sprite;
-	
 }
 
-function Update () {
+/*function Update () {
 	if (timesHit == 1) {
 		this.gameObject.GetComponent.<SpriteRenderer>().sprite = brick2Sprite;
 	}
@@ -24,12 +26,18 @@ function Update () {
 	}
 	if (timesHit == 3) {
 		this.gameObject.GetComponent.<SpriteRenderer>().sprite = brick4Sprite;
-	}		
+	}
 }
+*/
 
 function OnCollisionEnter2D(c : Collision2D) {
 	timesHit ++;
 	if (timesHit >= maxHits) {
+		brickCount--;
 		Destroy(this.gameObject);
+		if (brickCount==0){
+		Application.LoadLevel("Win");
+		}
 	}
+	GetComponent(SpriteRenderer).sprite = hitSprites[timesHit-1];
 }

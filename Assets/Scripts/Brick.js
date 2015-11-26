@@ -36,7 +36,7 @@ function OnCollisionEnter2D(c : Collision2D) {
 		brickCount--;
 		Destroy(this.gameObject);
 		if (brickCount==0){
-		Application.LoadLevel("Win");
+		Application.LoadLevel(Application.loadedLevel+1);
 		}
 	}
 	GetComponent(SpriteRenderer).sprite = hitSprites[timesHit-1];

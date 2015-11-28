@@ -8,6 +8,7 @@ var brick4Sprite : Sprite;*/
 var maxHits : int;
 var timesHit : int;
 var hitSprites : Sprite[];
+var fragments : GameObject;
 static var brickCount : int;
 
 function Start () {
@@ -34,6 +35,7 @@ function OnCollisionEnter2D(c : Collision2D) {
 	timesHit ++;
 	if (timesHit >= maxHits) {
 		brickCount--;
+		var brickDust = Instantiate (fragments, transform.position, Quaternion.identity);
 		Destroy(this.gameObject);
 		if (brickCount==0){
 		Application.LoadLevel(Application.loadedLevel+1);

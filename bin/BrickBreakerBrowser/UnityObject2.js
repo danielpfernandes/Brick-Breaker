@@ -343,7 +343,7 @@ var UnityObject2 = function (config) {
                 edge : /edge/i.test(a) ? parseFloat(a.replace(/^.*edge\/(\d+(\.\d+)?).*$/i, "$1")) : false
             };
             
-            ua.clientBrand = ua.ch ? 'ch' : ua.ff ? 'ff' : ua.sf ? 'sf' : ua.ie ? 'ie' : ua.op ? 'op' : '??';
+            ua.clientBrand = ua.edge ? 'edge' : ua.ch ? 'ch' : ua.ff ? 'ff' : ua.sf ? 'sf' : ua.ie ? 'ie' : ua.op ? 'op' : '??';
             ua.clientPlatform = ua.win ? 'win' : ua.mac ? 'mac' : '???';
             
             // get base url
@@ -1603,6 +1603,17 @@ var UnityObject2 = function (config) {
 			}
 		},
 		
+		displayCantRunBanner: function (targetEl, browserName, altBrowsers) {
+			var shownMessage = 
+				"<span style='font-weight:bold; font-size: 1.1em;'>Sorry, " + browserName + " can't run this app</span>" +
+				"<p>"+
+					"You are using " + browserName + " that does not support the Unity Web Player plugin needed to run this app.<br/>" +
+					"We recommend using another browser, such as " + altBrowsers + "." +
+				"</p>";
+			
+			this.displayDeprecatedBanner (targetEl, shownMessage);
+		},
+		
         /**
          * Notify observers about onProgress event
          * @public
@@ -1631,14 +1642,7 @@ var UnityObject2 = function (config) {
 						
 						var	browserList = "<a href='http://windows.microsoft.com/en-us/internet-explorer/'>Internet Explorer</a>, <a href='http://www.mozilla.org/firefox'>Firefox</a> or <a href='http://www.opera.com/'>Opera</a>";
 						
-						var shownMessage = 
-							"<span style='font-weight:bold; font-size: 1.1em;'>Sorry, Microsoft Edge can't run this app</span>" +
-							"<p>"+
-								"You are using Microsoft Edge that does not support the Unity Web Player plugin needed to run this app.<br/>" +
-								"We recommend using another browser, such as " + browserList + "." +
-							"</p>";
-						
-						this.displayDeprecatedBanner (targetEl, shownMessage);
+						this.displayCantRunBanner (targetEl, "Microsoft Edge", browserList);
 					}
 					else // Some other browser, not Microsoft Edge
 					{
@@ -1658,19 +1662,27 @@ var UnityObject2 = function (config) {
 							{
 								browserList = "<a href='http://www.mozilla.org/firefox'>Firefox</a>, <a href='https://www.apple.com/safari/'>Safari</a>";
 							}
-						
-							var shownMessage = 
-								"<span style='font-weight:bold; font-size: 1.1em;'>Sorry, Chrome can't run this app</span>" +
-								"<p>"+
-									"You are using a version of Chrome that does not currently support the Unity Web Player plugin needed to run this app.<br/>" +
-									"We recommend using another browser, such as " + browserList + ".<br/>" +
-									"Alternatively, you can enable NPAPI plugins at chrome://flags/#enable-npapi (requires browser relaunch)." +
-								"</p>" +
-								"<p>" +
-									"If you enabled the NPAPI flag and the plugin still does not work for you, try <a href=\"" + this.getPluginURL() + "\">manual install</a>." +
-								"</p>";
-						
-							this.displayDeprecatedBanner (targetEl, shownMessage);
+
+							// We show deprecated message only for Chrome < v45; for later versions won't work at all
+							if (ua.ch_v < 45)
+							{
+								var shownMessage = 
+									"<span style='font-weight:bold; font-size: 1.1em;'>Sorry, Chrome can't run this app</span>" +
+									"<p>"+
+										"You are using a version of Chrome that does not currently support the Unity Web Player plugin needed to run this app.<br/>" +
+										"We recommend using another browser, such as " + browserList + ".<br/>" +
+										"Alternatively, you can enable NPAPI plugins at chrome://flags/#enable-npapi (requires browser relaunch)." +
+									"</p>" +
+									"<p>" +
+										"If you enabled the NPAPI flag and the plugin still does not work for you, try <a href=\"" + this.getPluginURL() + "\">manual install</a>." +
+									"</p>";
+							
+								this.displayDeprecatedBanner (targetEl, shownMessage);
+							}
+							else // Very new Google Chrome. No longer supports NPAPI
+							{
+								this.displayCantRunBanner (targetEl, "Google Chrome", browserList);
+							}
 						}
 						else
 						{

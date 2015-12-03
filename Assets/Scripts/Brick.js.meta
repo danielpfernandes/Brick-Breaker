@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7ea47c13576cf584790d501115cf552a
+timeCreated: 1447704259
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - brick1Sprite: {fileID: 21300000, guid: f90a7da115d5c0e41a3d913a8ad3c4d4, type: 3}
+  - brick2Sprite: {fileID: 21300004, guid: c010ae6344a275840ad2a6844c8063a7, type: 3}
+  - brick3Sprite: {fileID: 21300006, guid: c010ae6344a275840ad2a6844c8063a7, type: 3}
+  - brick4Sprite: {fileID: 21300006, guid: c010ae6344a275840ad2a6844c8063a7, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -24,7 +24,7 @@ function MoveWithBall () {
     var ballPos = ball.transform.position;
     
     paddlePos.x = ballPos.x;
-    transform.position = transform.position = new Vector2(
+    transform.position = new Vector2(
 		Mathf.Clamp(paddlePos.x, 1.5, 14.5),
 		Mathf.Clamp(paddlePos.y, 1, 1)
 		);

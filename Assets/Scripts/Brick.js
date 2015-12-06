@@ -9,6 +9,7 @@ var maxHits : int;
 var timesHit : int;
 var hitSprites : Sprite[];
 var fragments : GameObject;
+var brickbreak: AudioClip; 
 static var brickCount : int;
 
 function Start () {
@@ -19,27 +20,24 @@ function Start () {
 }
 
 /*function Update () {
-	if (timesHit == 1) {
-		this.gameObject.GetComponent.<SpriteRenderer>().sprite = brick2Sprite;
+	if(Collision2D) {
+		GetComponent(AudioSource).Play();
 	}
-	if (timesHit == 2) {
-		this.gameObject.GetComponent.<SpriteRenderer>().sprite = brick3Sprite;
-	}
-	if (timesHit == 3) {
-		this.gameObject.GetComponent.<SpriteRenderer>().sprite = brick4Sprite;
-	}
-}
-*/
+}*/
+
 
 function OnCollisionEnter2D(c : Collision2D) {
+	GetComponent(AudioSource).Play();
 	timesHit ++;
 	if (timesHit >= maxHits) {
 		brickCount--;
+		AudioSource.PlayClipAtPoint(brickbreak, transform.position);
 		var brickDust = Instantiate (fragments, transform.position, Quaternion.identity);
 		Destroy(this.gameObject);
 		if (brickCount==0){
-		Application.LoadLevel(Application.loadedLevel+1);
+			Application.LoadLevel(Application.loadedLevel+1);
 		}
 	}
 	GetComponent(SpriteRenderer).sprite = hitSprites[timesHit-1];
+	
 }

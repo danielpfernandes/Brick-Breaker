@@ -14,5 +14,4 @@ function RequestQuit () {
 function StartDemo() {
     demoMode = true;
     Application.LoadLevel("Level1");
-   // add a statement here to load the first level
 }

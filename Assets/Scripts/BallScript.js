@@ -19,7 +19,7 @@ function Update () {
 function ShootBall () {
 	if (LevelScript.demoMode && notClicked) {	
 			var ballBody = GetComponent.<Rigidbody2D>();
-			ballBody.velocity = new Vector2(2,10);
+			ballBody.velocity = new Vector2(3,10);
 			notClicked = false;
 	}	
 	if(Input.GetMouseButtonDown(0) && notClicked){

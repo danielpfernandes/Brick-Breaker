@@ -1,9 +1,20 @@
 ﻿#pragma strict
 var mouseXposition;
 var ball : BallScript;
-		
+
+function Start() {
+	if (LevelScript.demoMode) {
+		yield WaitForSeconds(45);
+		if (Application.loadedLevel == 3) {
+			Application.LoadLevel(0);
+		} else {
+			Application.LoadLevel(Application.loadedLevel+1);
+		}
+	}
+}		
+						
 function Update () {
-if (LevelScript.demoMode) {
+	if (LevelScript.demoMode) {
    		MoveWithBall();
 	} else {
     	MoveWithMouse();
@@ -19,7 +30,10 @@ function MoveWithMouse () {
 		);
 }
 
-function MoveWithBall () {    
+function MoveWithBall () {
+	if (Input.GetMouseButtonDown(0)){
+		Application.LoadLevel("Start");
+	}
 	var paddlePos = transform.position;
     var ballPos = ball.transform.position;
     
@@ -28,4 +42,8 @@ function MoveWithBall () {
 		Mathf.Clamp(paddlePos.x, 1.5, 14.5),
 		Mathf.Clamp(paddlePos.y, 1, 1)
 		);
+}
+
+function OnCollisionEnter2D(c : Collision2D) {
+	GetComponent(AudioSource).Play();
 }

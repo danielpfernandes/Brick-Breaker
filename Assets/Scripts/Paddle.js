@@ -33,6 +33,7 @@ function MoveWithMouse () {
 function MoveWithBall () {
 	if (Input.GetMouseButtonDown(0)){
 		Application.LoadLevel("Start");
+		LevelScript.demoMode = false;
 	}
 	var paddlePos = transform.position;
     var ballPos = ball.transform.position;

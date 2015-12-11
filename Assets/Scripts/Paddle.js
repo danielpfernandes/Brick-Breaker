@@ -6,6 +6,7 @@ function Start() {
 	if (LevelScript.demoMode) {
 		yield WaitForSeconds(45);
 		if (Application.loadedLevel == 3) {
+			LevelScript.demoMode = false;
 			Application.LoadLevel(0);
 		} else {
 			Application.LoadLevel(Application.loadedLevel+1);
